@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
-const Feed = require('../Models/feedbackSchema');
+const Feedback = require('../Models/feedbackSchema');
 
 router.post('/api/feedback',async(req, res) =>{
     try{
