@@ -47,9 +47,7 @@ router.get('/api/feedback', async (req, res) => {
         const limit = Math.max(1, parseInt(req.query.limit) || 5);
 
         const skip = (page - 1) * limit;
-
         const totalRecords = await Feedback.countDocuments();
-
         const feedbacks = await Feedback.find()
             .skip(skip)
             .limit(limit);
@@ -69,7 +67,7 @@ router.get('/api/feedback', async (req, res) => {
 });
 
 
-// PATCH: Update feedback status
+
 router.patch('/api/feedback/:id', async (req, res) => {
     try {
         const { id } = req.params;
